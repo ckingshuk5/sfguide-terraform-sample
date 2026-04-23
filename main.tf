@@ -157,3 +157,10 @@ resource "snowflake_schema" "apple_src_apple_schema" {
   database            = snowflake_database.apple_src.name
   with_managed_access = false
 }
+
+# Create a new schema in the apple db 
+resource "snowflake_schema" "apple_src_release_schema" {
+  name                = "source"
+  database            = snowflake_database.apple_src.name
+  with_managed_access = false
+}
