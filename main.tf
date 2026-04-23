@@ -9,7 +9,7 @@ terraform {
 locals {
   organization_name = "fozmvxs"
   account_name      = "xq47575"
-  private_key_path  = "~/.ssh/snowflake_tf_snow_key.p8"
+  private_key_path  = "/home/kingshuk/.ssh/snowflake_tf_snow_key.p8"
 }
 
 provider "snowflake" {
@@ -154,6 +154,13 @@ resource "snowflake_database" "apple_src" {
 # Create a new schema in the apple db 
 resource "snowflake_schema" "apple_src_apple_schema" {
   name                = "source"
+  database            = snowflake_database.apple_src.name
+  with_managed_access = false
+}
+
+# Create a new schema in the apple db 
+resource "snowflake_schema" "apple_src_release_schema" {
+  name                = "release"
   database            = snowflake_database.apple_src.name
   with_managed_access = false
 }
