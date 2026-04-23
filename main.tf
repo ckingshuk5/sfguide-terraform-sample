@@ -6,6 +6,7 @@ terraform {
   }
 }
 #local keys generated
+###
 locals {
   organization_name = "fozmvxs"
   account_name      = "xq47575"
