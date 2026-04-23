@@ -5,7 +5,7 @@ terraform {
     }
   }
 }
-
+#local keys generated
 locals {
   organization_name = "fozmvxs"
   account_name      = "xq47575"
@@ -151,7 +151,7 @@ resource "snowflake_database" "apple_src" {
 }
 
 
-# Create a new schema in the apple db
+# Create a new schema in the apple db 
 resource "snowflake_schema" "apple_src_apple_schema" {
   name                = "src"
   database            = snowflake_database.apple_src.name
